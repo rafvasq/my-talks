@@ -5,11 +5,10 @@ import mlserver.grpc.converters as converters
 import mlserver.grpc.dataplane_pb2_grpc as dataplane
 import mlserver.types as types
 
-# model_name = "json-hello-world"
-model_name = "my-json-model"
+model_name = "soccer-results-predictor"
 inputs = {
-    "name": "Foo Bar",
-    "message": "Hello from Client (gRPC)!"
+    "name": "World Cup Winner",
+    "message": "Who will win the World Cup?"
 }
 inputs_bytes = json.dumps(inputs).encode("UTF-8")
 

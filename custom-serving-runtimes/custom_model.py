@@ -5,7 +5,7 @@ from mlserver import MLModel, types
 from mlserver.codecs import StringCodec
 
 
-class JsonHelloWorldModel(MLModel):
+class SoccerResultsModel(MLModel):
     async def load(self) -> bool:
         # Perform additional custom initialization here.
         print("Initialize model")
@@ -17,7 +17,7 @@ class JsonHelloWorldModel(MLModel):
         request = self._extract_json(payload)
         response = {
             "request": request,
-            "server_response": "Got your request. Hello from the server."
+            "server_response": "Japan will win the World Cup."
         }
         response_bytes = json.dumps(response).encode("UTF-8")
 

@@ -1,15 +1,15 @@
 apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
-  name: my-json-model
+  name: soccer-results-predictor
   annotations:
     serving.kserve.io/deploymentMode: ModelMesh
 spec:
   predictor:
     model:
       modelFormat:
-        name: json-model
-      # runtime: custom-runtime-0.x
+        name: soccer-model
+      runtime: soccer-runtime-0.x # OPTIONAL
       storage:
         key: localMinIO
-        path: json/custom_model.py
+        path: models/custom_model.py

@@ -1,10 +1,10 @@
 apiVersion: serving.kserve.io/v1alpha1
 kind: ServingRuntime
 metadata:
-  name: custom-json-runtime-0.x
+  name: soccer-runtime-0.x
 spec:
   supportedModelFormats:
-    - name: json-model
+    - name: soccer-model
       version: "1"
       autoSelect: true
 
@@ -14,7 +14,7 @@ spec:
   
   containers:
     - name: mlserver
-      image: rafvasq/my-custom-json-server:0.1.0
+      image: rafvasq/my-custom-server:0.1.0
       env:
         - name: MLSERVER_MODELS_DIR
           value: "/models/_mlserver_models/"
@@ -37,7 +37,6 @@ spec:
         # Unlimited because it will be restricted at the model mesh layer
         - name: MLSERVER_GRPC_MAX_MESSAGE_LENGTH
           value: "-1"
-
         - name: MLSERVER_DEBUG
           value: "true"
         - name: MLSERVER_MODEL_PARALLEL_WORKERS

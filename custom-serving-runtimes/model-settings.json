@@ -1,0 +1,4 @@
+{
+    "name": "soccer-results",
+    "implementation": "custom_model.SoccerResultsModel"
+}
