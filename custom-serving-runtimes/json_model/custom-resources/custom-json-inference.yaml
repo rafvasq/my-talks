@@ -1,0 +1,15 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: my-json-model
+  annotations:
+    serving.kserve.io/deploymentMode: ModelMesh
+spec:
+  predictor:
+    model:
+      modelFormat:
+        name: json-model
+      # runtime: custom-runtime-0.x
+      storage:
+        key: localMinIO
+        path: json/custom_model.py
