@@ -1,0 +1,4 @@
+{
+    "name": "tourism-results",
+    "implementation": "custom_model.TourismActivitiesModel"
+}

@@ -5,7 +5,7 @@ from mlserver import MLModel, types
 from mlserver.codecs import StringCodec
 
 
-class SoccerResultsModel(MLModel):
+class TourismActivitiesModel(MLModel):
     async def load(self) -> bool:
         # Perform additional custom initialization here.
         print("Initialize model")
@@ -17,7 +17,7 @@ class SoccerResultsModel(MLModel):
         request = self._extract_json(payload)
         response = {
             "request": request,
-            "server_response": "- Stanley Park - Vancouver Aquarium - Granville Island Public Market"
+            "server_response": "Stanley Park - Vancouver Aquarium - Granville Island Public Market"
         }
         response_bytes = json.dumps(response).encode("UTF-8")
 

@@ -1,15 +1,14 @@
 apiVersion: serving.kserve.io/v1beta1
 kind: InferenceService
 metadata:
-  name: tourism-activities-predictor
+  name: keras-example
   annotations:
     serving.kserve.io/deploymentMode: ModelMesh
 spec:
   predictor:
     model:
       modelFormat:
-        name: tourism-model
-      runtime: tourism-runtime-0.x # OPTIONAL
+        name: keras
       storage:
         key: localMinIO
-        path: models/custom_tourism_model.py
+        path: keras/mnist.h5
